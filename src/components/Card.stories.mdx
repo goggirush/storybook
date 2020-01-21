@@ -1,0 +1,70 @@
+import { action } from "@storybook/addon-actions";
+import { withA11y } from "@storybook/addon-a11y";
+import {
+  withKnobs,
+  text,
+  boolean,
+  number,
+  array
+} from "@storybook/addon-knobs";
+import { Preview, Story, Meta, Props } from "@storybook/addon-docs/blocks";
+import { withLiveEditScope } from "storybook-addon-react-live-edit";
+
+import Card from "./Card";
+
+<Meta title="Shared|Card" decorators={[withKnobs, withA11y]} component={Card} />
+
+# Card
+
+The primary button-component is Advisas call to action button.
+
+## Props-table
+
+The primary button uses the props described below. It does however also take in any extra props sent in that could be used with a button tag.
+For example the prop 'disabled' which is natively supported by the html button-tag.
+
+<Props of={Card} />
+
+### Default
+
+The default card.
+
+<Preview>
+  <Story name="Default">
+    <Card>Content goes here</Card>
+  </Story>
+</Preview>
+
+### State
+
+The states of the card.
+
+<Preview>
+  <Story name="State">
+    <form>
+      <Card>
+        The default card which fallbacks to use the default state value
+      </Card>
+      <Card state="grey">The "grey"-state of the card</Card>
+      <Card state="warning">The "warning"-state of the card</Card>
+      <Card state="error">The "error"-state of the card</Card>
+      <Card state="success">The "success" goes here</Card>
+    </form>
+  </Story>
+</Preview>
+
+### Size
+
+The sizes of the card.
+
+<Preview>
+  <Story name="Size">
+    <form>
+      <Card size="small">The "small"-size of the card</Card>
+      <Card>
+        The default card size which fallbacks to use the default size value
+      </Card>
+      <Card size="large">The "large"-size of the card</Card>
+    </form>
+  </Story>
+</Preview>

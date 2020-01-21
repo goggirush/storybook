@@ -1,0 +1,35 @@
+.card {
+  padding: 20px;
+  border: 1px solid grey;
+  margin: 20px 0px;
+}
+
+.card--white {
+  background: #ffffff;
+}
+
+.card--grey {
+  background: rgb(221, 221, 221);
+}
+
+.card--warning {
+  background: rgb(255, 255, 217);
+}
+
+.card--error {
+  background: rgb(255, 217, 217);
+}
+
+.card--success {
+  background: rgb(220, 255, 217);
+}
+
+.card--small {
+  width: 25%;
+}
+.card--medium {
+  width: 50%;
+}
+.card--large {
+  width: 80%;
+}

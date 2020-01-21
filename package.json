@@ -1,0 +1,27 @@
+{
+  "name": "storybook",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^5.3.6",
+    "@storybook/addon-actions": "^5.3.6",
+    "@storybook/addon-docs": "^5.3.6",
+    "@storybook/addon-knobs": "^5.3.6",
+    "@storybook/addon-links": "^5.3.6",
+    "@storybook/addons": "^5.3.6",
+    "@storybook/preset-create-react-app": "^1.5.2",
+    "@storybook/react": "^5.3.6",
+    "babel-loader": "^8.0.6",
+    "react-is": "^16.12.0",
+    "storybook-addon-react-live-edit": "^2.0.4"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
+  }
+}
