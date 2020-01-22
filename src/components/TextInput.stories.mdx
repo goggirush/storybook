@@ -5,13 +5,15 @@ import {
   text,
   boolean,
   number,
-  array
+  select,
 } from "@storybook/addon-knobs";
 import { Preview, Story, Meta, Props } from "@storybook/addon-docs/blocks";
 import { withLiveEditScope } from "storybook-addon-react-live-edit";
 import "../styles/Main.css";
 
 import TextInput from "./TextInput";
+const textInputTypes = ['text', 'tel', 'email', 'password', 'url', 'search']
+const textInputSize = ['medium', 'compact', 'large']
 
 <Meta
   title="Shared|Input/TextInput"
@@ -86,9 +88,9 @@ A **_TextInput_** will do better if it has the ability to have different sizes.
 <Preview>
   <Story name="Size">
     <form>
-      <TextInput label="Compact" compact></TextInput>
+      <TextInput label="Compact" size="compact"></TextInput>
       <TextInput label="Default"></TextInput>
-      <TextInput label="Large" large></TextInput>
+      <TextInput label="Large" size="large"></TextInput>
     </form>
   </Story>
 </Preview>
@@ -118,6 +120,17 @@ An example where we use the type 'password' together with a large size **_Text I
 
 <Preview>
   <Story name="Example">
-    <TextInput label="Password" large type="password"></TextInput>
+    <TextInput label="Password" size="large" type="password"></TextInput>
+  </Story>
+</Preview>
+
+### Playground
+
+An example of a card where both size and state is used together with more content then the previous examples.
+
+<Preview>
+  <Story name="Playground">
+    <TextInput label={text('Label')} type={select('Type', textInputTypes)} size={select('Size', textInputSize)}>
+    </TextInput>
   </Story>
 </Preview>

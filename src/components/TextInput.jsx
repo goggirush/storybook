@@ -9,8 +9,7 @@ import "../styles/Field.css";
 const TextInput = ({
   id,
   name,
-  compact,
-  large,
+  size,
   labelOutside,
   label,
   suffix,
@@ -30,19 +29,13 @@ const TextInput = ({
     <div
       className={`
         field
-				${compact ? "c-field--compact" : ""}
-				${large ? "c-field--large" : ""}
+				c-field--${size}
         ${labelOutside ? "c-field--label-outside" : ""}
         ${validated ? "c-field--validated" : ""}
         ${validated && valid === true ? "c-field--valid" : ""}
         ${validated && valid === false ? "c-field--invalid" : ""}
         ${className}
       `}
-      // data-tooltip={tooltipObject.text}
-      // data-tooltip-width={tooltipObject.width}
-      // data-tooltip-position={tooltipObject.position}
-      // data-tooltip-position-desktop={tooltipObject.positionDesktop}
-      // data-tooltip-trigger={tooltipObject.trigger}
     >
       <label htmlFor={inputId}>
         {label && <div className="c-field__label-text">{label}</div>}
@@ -71,17 +64,14 @@ const TextInput = ({
 TextInput.propTypes = {
   id: PropTypes.string,
   type: PropTypes.oneOf(["text", "tel", "email", "password", "url", "search"]),
-  size: PropTypes.oneOf(["compact", "default", "large"]),
+  size: PropTypes.oneOf(["compact", "medium", "large"]),
   name: PropTypes.string,
-  compact: PropTypes.bool,
-  large: PropTypes.bool,
   labelOutside: PropTypes.bool,
   label: PropTypes.string,
   suffix: PropTypes.string,
   validated: PropTypes.bool,
   valid: PropTypes.bool,
   className: PropTypes.string,
-  // tooltip: tooltipSchema,
   override: PropTypes.shape({
     input: PropTypes.shape({
       className: PropTypes.string
@@ -94,7 +84,7 @@ TextInput.defaultProps = {
   id: null,
   type: "text",
   name: null,
-  size: "default",
+  size: "medium",
   labelOutside: false,
   label: "",
   suffix: "",
