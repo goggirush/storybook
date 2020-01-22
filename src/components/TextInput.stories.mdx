@@ -1,0 +1,123 @@
+import { action } from "@storybook/addon-actions";
+import { withA11y } from "@storybook/addon-a11y";
+import {
+  withKnobs,
+  text,
+  boolean,
+  number,
+  array
+} from "@storybook/addon-knobs";
+import { Preview, Story, Meta, Props } from "@storybook/addon-docs/blocks";
+import { withLiveEditScope } from "storybook-addon-react-live-edit";
+import "../styles/Main.css";
+
+import TextInput from "./TextInput";
+
+<Meta
+  title="Shared|Input/TextInput"
+  decorators={[withKnobs, withA11y]}
+  component={TextInput}
+/>
+
+<div className="headline">
+
+# TextInput
+
+</div>
+
+The **_TextInput_** is one of the most common components we have, and nothing makes us happier than when a customer fills in a form and applies for a loan!
+
+## Props-table
+
+The **_TextInput_** uses the props described below.
+
+<Props of={TextInput} />
+
+---
+
+### Default
+
+The default **_TextInput_**.
+
+<Preview>
+  <Story name="Default">
+    <TextInput></TextInput>
+  </Story>
+</Preview>
+
+---
+
+### Label
+
+A **_TextInput_** is more declarative when used together with a label.
+
+<Preview>
+  <Story name="Label">
+    <TextInput label="Label"></TextInput>
+  </Story>
+</Preview>
+
+---
+
+### Types
+
+A **_TextInput_** can be combined with types and therefore work differently, the 'password' type
+for example masks the input and the 'email' type requires a correctly formated e-mail adress in order to continue (form validation is not implemented here).
+
+<Preview>
+  <Story name="Types">
+    <form>
+      <TextInput label="default"></TextInput>
+      <TextInput label="tel" type="tel"></TextInput>
+      <TextInput label="email" type="email"></TextInput>
+      <TextInput label="password" type="password"></TextInput>
+      <TextInput label="url" type="url"></TextInput>
+      <TextInput label="search" type="search"></TextInput>
+    </form>
+  </Story>
+</Preview>
+
+---
+
+### Size
+
+A **_TextInput_** will do better if it has the ability to have different sizes.
+
+<Preview>
+  <Story name="Size">
+    <form>
+      <TextInput label="Compact" compact></TextInput>
+      <TextInput label="Default"></TextInput>
+      <TextInput label="Large" large></TextInput>
+    </form>
+  </Story>
+</Preview>
+
+---
+
+### State
+
+A **_TextInput_** can be combined with types and work differently, the 'password' type for example masks the input
+
+<Preview>
+  <Story name="State">
+    <form>
+      <TextInput label="Default"></TextInput>
+      <TextInput label="Focused" className="c-field--in-progress"></TextInput>
+      <TextInput label="Valid" validated valid></TextInput>
+      <TextInput label="Invalid" validated valid={false}></TextInput>
+    </form>
+  </Story>
+</Preview>
+
+---
+
+### Example
+
+An example where we use the type 'password' together with a large size **_Text Input_** to form an example input for a password.
+
+<Preview>
+  <Story name="Example">
+    <TextInput label="Password" large type="password"></TextInput>
+  </Story>
+</Preview>

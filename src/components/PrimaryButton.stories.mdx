@@ -18,7 +18,11 @@ import PrimaryButton from "./PrimaryButton";
   component={PrimaryButton}
 />
 
+<div className="headline">
+
 # Primary Button
+
+</div>
 
 The primary button-component is Advisas call to action button.
 
@@ -28,6 +32,8 @@ The primary button uses the props described below. It does however also take in 
 For example the prop 'disabled' which is natively supported by the html button-tag.
 
 <Props of={PrimaryButton} />
+
+---
 
 ### Default
 
@@ -62,5 +68,17 @@ In cases where you might want a smaller primary button, you may pass in a classN
     <PrimaryButton className="btn--compact">
       {text("Label", "Compact")}
     </PrimaryButton>
+  </Story>
+</Preview>
+
+---
+
+### Example
+
+An example where we use the default state(enabled) and the compact size of the **_Primary Button_** to simulate a true action button.
+
+<Preview>
+  <Story name="Example">
+    <PrimaryButton className="btn--compact">Accept offer</PrimaryButton>
   </Story>
 </Preview>

@@ -14,20 +14,25 @@ import Card from "./Card";
 
 <Meta title="Shared|Card" decorators={[withKnobs, withA11y]} component={Card} />
 
+<div className="headline">
+
 # Card
 
-The primary button-component is Advisas call to action button.
+</div>
+
+Cards are often used as containers for children-content.
 
 ## Props-table
 
-The primary button uses the props described below. It does however also take in any extra props sent in that could be used with a button tag.
-For example the prop 'disabled' which is natively supported by the html button-tag.
+The **_card_** component uses the props described below.
 
 <Props of={Card} />
 
+---
+
 ### Default
 
-The default card.
+The default card without any props where "content goes here" is applied as a child.
 
 <Preview>
   <Story name="Default">
@@ -35,9 +40,11 @@ The default card.
   </Story>
 </Preview>
 
+---
+
 ### State
 
-The states of the card.
+The states of the card. Can be used to quickly emphasize the meaning of a card.
 
 <Preview>
   <Story name="State">
@@ -53,6 +60,8 @@ The states of the card.
   </Story>
 </Preview>
 
+---
+
 ### Size
 
 The sizes of the card.
@@ -66,5 +75,25 @@ The sizes of the card.
       </Card>
       <Card size="large">The "large"-size of the card</Card>
     </form>
+  </Story>
+</Preview>
+
+---
+
+### Example
+
+An example of a card where both size and state is used together with more content then the previous examples.
+
+<Preview>
+  <Story name="Example">
+    <Card size="large" state="success">
+      <h1> OMG YOU DID IT!!! </h1>
+      <h4>What you are:</h4>
+      <ul>
+        <li>Good </li>
+        <li>Pretty</li>
+        <li>Cool</li>
+      </ul>
+    </Card>
   </Story>
 </Preview>

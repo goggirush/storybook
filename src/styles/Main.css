@@ -1,0 +1,18 @@
+.headline h1 {
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+
+.headline {
+  background: #58b0c3;
+  padding: 20px;
+}
+
+.sbdocs-content h3 {
+  color: #58b0c3;
+}
+
+.sbdocs-content .sbdocs-hr {
+  border-top: 5px solid #58b0c3;
+}
