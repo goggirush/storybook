@@ -1,0 +1,111 @@
+import { action } from "@storybook/addon-actions";
+import { withA11y } from "@storybook/addon-a11y";
+import {
+  withKnobs,
+  text,
+  boolean,
+  number,
+  array
+} from "@storybook/addon-knobs";
+import { Preview, Story, Meta, Props } from "@storybook/addon-docs/blocks";
+import { withLiveEditScope } from "storybook-addon-react-live-edit";
+
+import Button from "./Button";
+
+<Meta
+  title="Shared|Button"
+  decorators={[withKnobs, withA11y]}
+  component={Button}
+/>
+
+<div className="headline">
+
+# Button
+
+</div>
+
+The button-component is Advisas call to action button.
+
+## Props-table
+
+The button uses the props described below. It does however also take in any extra props sent in that could be used with a button tag.
+For example the prop 'disabled' which is natively supported by the html button-tag.
+
+<Props of={Button} />
+
+---
+
+### Default
+
+The default button.
+
+<Preview>
+  <Story name="Default">
+    <Button>Default</Button>
+  </Story>
+</Preview>
+
+---
+
+### Types
+
+Buttons may have different types/colors.
+
+<Preview>
+  <Story name="Types">
+    <form>
+      <Button>Default</Button>
+      <Button type="warning">Warning</Button>
+      <Button type="error">Error</Button>
+      <Button type="success">Success</Button>
+    </form>
+  </Story>
+</Preview>
+
+---
+
+### Disabled
+
+The button may also be conditionally disabled by passing in 'disabled' to the component.
+
+<Preview>
+  <Story name="Disabled">
+    <Button disabled>Disabled</Button>
+  </Story>
+</Preview>
+
+---
+
+### Compact
+
+In cases where you might want a smaller button, you may pass in a className for that.
+
+<Preview>
+  <Story name="Compact">
+    <Button className="btn--compact">
+      Compact
+    </Button>
+  </Story>
+</Preview>
+
+---
+
+### Example
+
+An example where we use the success state and the compact size of the **_Button_** to simulate a true action button.
+
+<Preview>
+  <Story name="Example">
+    <Button type="success" className="btn--compact">Accept offer</Button>
+  </Story>
+</Preview>
+
+### Playground
+
+Work hard, play hard!
+
+<Preview>
+  <Story name="Playground">
+    <Button disabled={boolean('Disabled', false)} className={text('CSS-class', '')}>{text('Label', '')}</Button>
+  </Story>
+</Preview>

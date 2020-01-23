@@ -1,11 +1,29 @@
 .btn {
   padding: 10px 20px;
-  background: rgb(45, 194, 124);
+  background: rgb(45, 118, 194);
   color: white;
   border: none;
   font-size: 22px;
   border-radius: 5px;
   font-weight: bold;
+  display: block;
+  margin: 10px;
+}
+
+.btn--primary{
+  background: rgb(45, 118, 194);
+}
+
+.btn--warning{
+  background: #ffa950;
+}
+
+.btn--error{
+  background: red;
+}
+
+.btn--success{
+  background: green;
 }
 
 .btn:disabled {
@@ -13,7 +31,8 @@
 }
 
 .btn--compact {
-  padding: 5px 10px;
+  padding: 3px 5px;
+  font-size: 12px;
 }
 
 .btn > img {

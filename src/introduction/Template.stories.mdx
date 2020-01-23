@@ -1,0 +1,60 @@
+import { Preview, Story, Meta, Props } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction|Template"/>
+
+# Template
+
+    import {
+			withKnobs,
+			text,
+			boolean,
+			number,
+			select,
+    } from "@storybook/addon-knobs";
+    import { Preview, Story, Meta, Props } from "@storybook/addon-docs/blocks";
+
+    import YourComponentName from "./YourComponentName";
+
+    <Meta
+    title="Example|Example/Example"
+    decorators={[withKnobs]}
+    component={YourComponentName}
+    />
+
+    <div className="headline">
+
+    	# The title of the file
+
+    </div>
+
+    Introduction text goes here
+
+    ## Props-table
+
+    The YourComponentName uses the props described below.
+
+    <Props of={YourComponentName} />
+
+    ---
+
+    ### Story name
+
+    Introduction/information on story
+
+    <Preview>
+    <Story name="NameOfStory">
+        <YourComponentName></YourComponentName>
+    </Story>
+    </Preview>
+
+    ---
+
+    ### Stor number 2 name
+
+			Introduction/information on story
+
+    <Preview>
+			<Story name="NameOfStoryNumber2">
+					<YourComponentName></YourComponentName>
+			</Story>
+    </Preview>
