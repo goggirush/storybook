@@ -5,15 +5,16 @@ import {
   text,
   boolean,
   number,
-  array
+  array,
+  select,
 } from "@storybook/addon-knobs";
 import { Preview, Story, Meta, Props } from "@storybook/addon-docs/blocks";
 import { withLiveEditScope } from "storybook-addon-react-live-edit";
-
 import Button from "./Button";
+const buttonTypes = ['primary', 'warning', 'error', 'success'];
 
 <Meta
-  title="Shared|Button"
+  title="Shared|Button/test"
   decorators={[withKnobs, withA11y]}
   component={Button}
 />
@@ -106,6 +107,6 @@ Work hard, play hard!
 
 <Preview>
   <Story name="Playground">
-    <Button disabled={boolean('Disabled', false)} className={text('CSS-class', '')}>{text('Label', '')}</Button>
+    <Button disabled={boolean('Disabled', false)} type={select('Type', buttonTypes)} className={text('CSS-class', '')}>{text('Label', '')}</Button>
   </Story>
 </Preview>

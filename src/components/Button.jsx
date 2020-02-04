@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../styles/Button.css";
 
-const PrimaryButton = ({ children, className, type, ...props }) => (
+const Button = ({ children, className, type, ...props }) => (
   <button
     className={`
       btn
@@ -15,18 +15,18 @@ const PrimaryButton = ({ children, className, type, ...props }) => (
   </button>
 );
 
-PrimaryButton.propTypes = {
+Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
   className: PropTypes.string,
   type: PropTypes.oneOf(['primary', 'warning', 'error', 'success']),
 };
 
-PrimaryButton.defaultProps = {
+Button.defaultProps = {
   children: "",
   onClick: null,
   className: null,
   type: 'primary',
 };
 
-export default PrimaryButton;
+export default Button;
